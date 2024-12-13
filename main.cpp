@@ -11,31 +11,12 @@ using namespace MdfLibrary::ExportFunctions;
 
 void cpp_example() {
   {
-    std::cout << "Read" << std::endl;
     MdfReader Reader("example.mf4");
     Reader.ReadEverythingButData();
+    
     auto Header = Reader.GetHeader();
-    std::cout << "Author: " << Header.GetAuthor().c_str() << std::endl;
-    std::cout << "Department: " << Header.GetDepartment() << std::endl;
-    std::cout << "Description: " << Header.GetDescription() << std::endl;
-    std::cout << "Project: " << Header.GetProject() << std::endl;
-    std::cout << "StartTime: " << Header.GetStartTime() << std::endl;
-    std::cout << "Subject: " << Header.GetSubject() << std::endl;
-
-    auto Historys = Header.GetFileHistorys();
-    std::cout << "History: " << Historys.size() << std::endl;
-    for (const auto& History : Historys) {
-      std::cout << "Time: " << History.GetTime() << std::endl;
-      std::cout << "Description: " << History.GetDescription() << std::endl;
-      std::cout << "ToolName: " << History.GetToolName() << std::endl;
-      std::cout << "ToolVendor: " << History.GetToolVendor() << std::endl;
-      std::cout << "ToolVersion: " << History.GetToolVersion() << std::endl;
-      std::cout << "UserName: " << History.GetUserName() << std::endl;
-      std::cout << std::endl;
-    }
-
     auto DataGroups = Header.GetDataGroups();
-    std::cout << "DataGroups: " << DataGroups.size() << std::endl;
+    
     for (const auto& DataGroup : DataGroups) {
       auto ChannelGroups = DataGroup.GetChannelGroups();
       std::cout << "ChannelGroups: " << ChannelGroups.size() << std::endl;
@@ -78,7 +59,9 @@ void cpp_example() {
                 uint64_t channel_value, eng_value;
                 Observer.GetChannelValue(i, channel_value);
                 Observer.GetEngValue(i, eng_value);
-                std::cout << "Channel: " << channel_value
+                std::cout << "Name: " << Observer.GetName();
+                std::cout << ", Unit: " << Observer.GetUnit();
+                std::cout << ", Channel: " << channel_value
                           << ", Eng: " << eng_value << std::endl;
                 break;
               }
@@ -87,7 +70,9 @@ void cpp_example() {
                 uint64_t channel_value, eng_value;
                 Observer.GetChannelValue(i, channel_value);
                 Observer.GetEngValue(i, eng_value);
-                std::cout << "Channel: " << channel_value
+                std::cout << "Name: " << Observer.GetName();
+                std::cout << ", Unit: " << Observer.GetUnit();
+                std::cout << ", Channel: " << channel_value
                           << ", Eng: " << eng_value << std::endl;
                 break;
               }
@@ -96,7 +81,9 @@ void cpp_example() {
                 int64_t channel_value, eng_value;
                 Observer.GetChannelValue(i, channel_value);
                 Observer.GetEngValue(i, eng_value);
-                std::cout << "Channel: " << channel_value
+                std::cout << "Name: " << Observer.GetName();
+                std::cout << ", Unit: " << Observer.GetUnit();
+                std::cout << ", Channel: " << channel_value
                           << ", Eng: " << eng_value << std::endl;
                 break;
               }
@@ -105,7 +92,9 @@ void cpp_example() {
                 double channel_value, eng_value;
                 Observer.GetChannelValue(i, channel_value);
                 Observer.GetEngValue(i, eng_value);
-                std::cout << "Channel: " << channel_value
+                std::cout << "Name: " << Observer.GetName();
+                std::cout << ", Unit: " << Observer.GetUnit();
+                std::cout << ", Channel: " << channel_value
                           << ", Eng: " << eng_value << std::endl;
                 break;
               }
@@ -116,7 +105,9 @@ void cpp_example() {
                 std::string channel_value, eng_value;
                 Observer.GetChannelValue(i, channel_value);
                 Observer.GetEngValue(i, eng_value);
-                std::cout << "Channel: " << channel_value
+                std::cout << "Name: " << Observer.GetName();
+                std::cout << ", Unit: " << Observer.GetUnit();
+                std::cout << ", Channel: " << channel_value
                           << ", Eng: " << eng_value << std::endl;
                 break;
               }
@@ -126,7 +117,9 @@ void cpp_example() {
                 std::vector<uint8_t> channel_value, eng_value;
                 Observer.GetChannelValue(i, channel_value);
                 Observer.GetEngValue(i, eng_value);
-                std::cout << "Channel: " << channel_value.size()
+                std::cout << "Name: " << Observer.GetName();
+                std::cout << ", Unit: " << Observer.GetUnit();
+                std::cout << ", Channel: " << channel_value.size()
                           << ", Eng: " << eng_value.size() << std::endl;
                 break;
               }
