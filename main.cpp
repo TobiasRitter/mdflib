@@ -24,13 +24,13 @@ void cpp_example() {
 
     auto Historys = Header.GetFileHistorys();
     std::cout << "History: " << Historys.size() << std::endl;
-    for (const auto& Histroy : Historys) {
-      std::cout << "Time: " << Histroy.GetTime() << std::endl;
-      std::cout << "Description: " << Histroy.GetDescription() << std::endl;
-      std::cout << "ToolName: " << Histroy.GetToolName() << std::endl;
-      std::cout << "ToolVendor: " << Histroy.GetToolVendor() << std::endl;
-      std::cout << "ToolVersion: " << Histroy.GetToolVersion() << std::endl;
-      std::cout << "UserName: " << Histroy.GetUserName() << std::endl;
+    for (const auto& History : Historys) {
+      std::cout << "Time: " << History.GetTime() << std::endl;
+      std::cout << "Description: " << History.GetDescription() << std::endl;
+      std::cout << "ToolName: " << History.GetToolName() << std::endl;
+      std::cout << "ToolVendor: " << History.GetToolVendor() << std::endl;
+      std::cout << "ToolVersion: " << History.GetToolVersion() << std::endl;
+      std::cout << "UserName: " << History.GetUserName() << std::endl;
       std::cout << std::endl;
     }
 
