@@ -11,6 +11,12 @@ def main() -> None:
                 name="Signal1",
                 unit="A",
             ),
+            Signal(
+                samples=[11, 12, 13],
+                timestamps=[0.0, 0.2, 0.4],
+                name="Signal2",
+                unit="V",
+            ),
         ]
     )
     mdf.save("example.mf4", overwrite=True)
