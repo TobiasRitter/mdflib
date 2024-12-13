@@ -6,14 +6,14 @@ def main() -> None:
     mdf.append(
         [
             Signal(
-                samples=[0, 1, 2, 3, 4],
+                samples=[1, 2, 3, 4, 5],
                 timestamps=[0.0, 0.1, 0.2, 0.3, 0.4],
                 name="Signal1",
                 unit="A",
             ),
         ]
     )
-    mdf.save("example.mf4")
+    mdf.save("example.mf4", overwrite=True)
 
 
 if __name__ == "__main__":
