@@ -12,38 +12,13 @@ using namespace MdfLibrary::ExportFunctions;
 void cpp_example() {
   {
     MdfReader Reader("example.mf4");
-    Reader.ReadEverythingButData();
-    
+    Reader.ReadEverythingButData();    
     auto Header = Reader.GetHeader();
-    auto DataGroups = Header.GetDataGroups();
     
-    for (const auto& DataGroup : DataGroups) {
-      auto ChannelGroups = DataGroup.GetChannelGroups();
-      std::cout << "ChannelGroups: " << ChannelGroups.size() << std::endl;
-      for (const auto& ChannelGroup : ChannelGroups) {
-        std::cout << "Name: " << ChannelGroup.GetName() << std::endl;
-        std::cout << "Description: " << ChannelGroup.GetDescription()
-                  << std::endl;
-
-        std::cout << "Nof Samples: " << ChannelGroup.GetNofSamples()
-                  << std::endl;
-
-        auto Channels = ChannelGroup.GetChannels();
-        std::cout << "Channels: " << Channels.size() << std::endl;
+    for (const auto& DataGroup : Header.GetDataGroups()) {
+      for (const auto& ChannelGroup : DataGroup.GetChannelGroups()) {
         std::vector<MdfLibrary::MdfChannelObserver> Observers;
-        for (const auto& Channel : Channels) {
-          std::cout << "Name: " << Channel.GetName() << std::endl;
-          std::cout << "Description: " << Channel.GetDescription() << std::endl;
-          std::cout << "Type: " << static_cast<int>(Channel.GetType())
-                    << std::endl;
-          std::cout << "Sync: " << static_cast<int>(Channel.GetSync())
-                    << std::endl;
-          std::cout << "DataType: " << static_cast<int>(Channel.GetDataType())
-                    << std::endl;
-          std::cout << "DataBytes: " << Channel.GetDataBytes() << std::endl;
-          std::cout << "Unit: " << Channel.GetUnit() << std::endl;
-          std::cout << std::endl;
-
+        for (const auto& Channel : ChannelGroup.GetChannels()) {
           Observers.push_back(
               MdfChannelObserver(DataGroup, ChannelGroup, Channel));
         }
@@ -51,7 +26,6 @@ void cpp_example() {
         Reader.ReadData(DataGroup);
 
         for (size_t i = 0; i < ChannelGroup.GetNofSamples(); i++) {
-          std::cout << "Sample: " << i << std::endl;
           for (const auto& Observer : Observers) {
             switch (Observer.GetChannel().GetDataType()) {
               case ChannelDataType::CanOpenDate:
