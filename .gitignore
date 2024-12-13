@@ -68,3 +68,4 @@ venv/
 python/tests/__pycache__/
 
 *.mf4
+emsdk
