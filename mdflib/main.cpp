@@ -4,10 +4,9 @@
 #include <stdio.h>
 #include <time.h>
 
-int main()
-{
+int read(char* filename) {
 	CMdf4FileImport *pImport = new CMdf4FileImport;
-	if (pImport->ImportFile("./Test.mf4"))
+	if (pImport->ImportFile(filename))
 	{
 		// Display the content of the file
 		for (int i = 0; i < pImport->m_nDataGroups; i++)
@@ -21,5 +20,10 @@ int main()
 		printf("Error reading file\n");
 	}
 	return 0;
+}
+
+int main()
+{
+	return read("./Test.mf4");
 }
 
