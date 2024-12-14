@@ -4,9 +4,9 @@
 #include <stdio.h>
 #include <time.h>
 
-int read(char* filename) {
+int read() {
 	CMdf4FileImport *pImport = new CMdf4FileImport;
-	if (pImport->ImportFile(filename))
+	if (pImport->ImportFile("./Test.mf4"))
 	{
 		// Display the content of the file
 		for (int i = 0; i < pImport->m_nDataGroups; i++)
@@ -24,6 +24,6 @@ int read(char* filename) {
 
 int main()
 {
-	read("./Test.mf4");
+	read();
 }
 
