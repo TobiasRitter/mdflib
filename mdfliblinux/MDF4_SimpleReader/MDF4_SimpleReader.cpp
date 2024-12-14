@@ -10,14 +10,19 @@
 int main(int argc, char* argv[])
 {
 	CMdf4FileImport *pImport = new CMdf4FileImport;
-#ifdef WIN32
-	if (pImport->ImportFile("C:\\Temp\\Test.mf4"))
-#else
-	if (pImport->ImportFile("../Test.mf4"))
-#endif
+	if (pImport->ImportFile("./Test.mf4"))
 	{
+		// Display the content of the file
+		for (int i = 0; i < pImport->m_nDataGroups; i++)
+		{
+			CMdf4DataGroup *pGroup = pImport->m_vDataGroups[i];
+			pImport->DisplayGroup(pGroup);
+		}
 	}
-	getchar();
+	else
+	{
+		printf("Error reading file\n");
+	}
 	return 0;
 }
 
