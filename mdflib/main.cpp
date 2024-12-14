@@ -2,36 +2,27 @@
 #include "ImportMdf4.h"
 #include "mdf4.h"
 #include <stdio.h>
+#include <iostream>
 #include <time.h>
+#include <emscripten/emscripten.h>
 
-int read(char* filename) {
-	CMdf4FileImport *pImport = new CMdf4FileImport;
-	if (pImport->ImportFile(filename))
-	{
-		// Display the content of the file
-		for (int i = 0; i < pImport->m_nDataGroups; i++)
+extern "C" {
+    EMSCRIPTEN_KEEPALIVE
+	int mf4read() {
+		CMdf4FileImport* pImport = new CMdf4FileImport;
+		if (pImport->ImportFile("./Test.mf4"))
 		{
-			CMdf4DataGroup *pGroup = pImport->m_vDataGroups[i];
-			pImport->DisplayGroup(pGroup);
+			for (int i = 0; i < pImport->m_nDataGroups; i++)
+			{
+				CMdf4DataGroup *pGroup = pImport->m_vDataGroups[i];
+				pImport->DisplayGroup(pGroup);
+			}
 		}
+		else
+		{
+			std::cout << "Error reading file\n";
+		}
+		delete pImport;
+		return 0;
 	}
-	else
-	{
-		printf("Error reading file\n");
-	}
-	return 0;
 }
-
-void* malloc(size_t size) {
-    return malloc(size);
-}
-
-void free(void* ptr) {
-    free(ptr);
-}
-
-int main()
-{
-	printf("Hello World\n");
-}
-

@@ -53,6 +53,7 @@ vcpkg_installed/
 # Visual Studio code
 .vscode/
 build/
+!mdflib/build
 
 # User-specific files
 *.rsuser
@@ -70,6 +71,3 @@ python/tests/__pycache__/
 *.mf4
 emsdk
 libexpat
-*.wasm
-*.html
-*.js
