@@ -1,14 +1,13 @@
-let fileReader = new FileReader();
+const fileReader = new FileReader();
 
 function loadFile() {
-    let files = document.getElementById('fileInput').files;
+    const files = document.getElementById('fileInput').files;
     fileReader.addEventListener('loadend', postLoad);
     fileReader.readAsArrayBuffer(files[0]);
 }
 
 function postLoad() {
-    let arrayBuffer = fileReader.result;
-    let byteArray = new Uint8Array(arrayBuffer);
-    FS.writeFile('Test.mf4', byteArray);
+    const data = new Uint8Array(fileReader.result);
+    FS.writeFile('Test.mf4', data);
     console.log(Module._mf4read());
 }
