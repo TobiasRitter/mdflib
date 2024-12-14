@@ -43,5 +43,5 @@ In Netbeans it is basically the same. In Eclipse it should be possible, but I co
 
 ```bash
 g++ MDF4_SimpleReader.cpp ImportMdf4.cpp mdf4.cpp mdFile.cpp md5.cpp -o reader
-em++ MDF4_SimpleReader.cpp ImportMdf4.cpp mdf4.cpp mdFile.cpp md5.cpp -o reader
+em++ MDF4_SimpleReader.cpp ImportMdf4.cpp mdf4.cpp mdFile.cpp md5.cpp -o reader.html
 ```
