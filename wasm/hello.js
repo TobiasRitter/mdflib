@@ -4143,7 +4143,7 @@ var wasmImports = {
 var wasmExports = createWasm();
 var ___wasm_call_ctors = createExportWrapper('__wasm_call_ctors', 0);
 var _add = Module['_add'] = createExportWrapper('add', 2);
-var _read = Module['_read'] = createExportWrapper('read', 1);
+var _read = Module['_read'] = createExportWrapper('read', 0);
 var _fflush = createExportWrapper('fflush', 1);
 var _strerror = createExportWrapper('strerror', 1);
 var _emscripten_stack_init = () => (_emscripten_stack_init = wasmExports['emscripten_stack_init'])();

@@ -10,7 +10,7 @@ extern "C" {
     }
 
     EMSCRIPTEN_KEEPALIVE
-    int read(char* filename) {
+    int read() {
         std::ifstream f("file.txt");
 
         if (f.is_open())
