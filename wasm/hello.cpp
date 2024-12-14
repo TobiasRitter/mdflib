@@ -1,4 +1,12 @@
 #include <stdio.h>
+#include <emscripten/emscripten.h>
+
+extern "C" {
+    EMSCRIPTEN_KEEPALIVE
+    int add(int a, int b) {
+        return a + b;
+    }
+}
 
 int main() {
     printf("Hello, World!\n");
