@@ -158,7 +158,7 @@ void MD5Context::Final(unsigned char *digest)
 void MD5Context::Transform()
 {
   unsigned long *_in=(unsigned long *)in;
-  register unsigned long a, b, c, d;
+  unsigned long a, b, c, d;
 
   a = buf[0];
   b = buf[1];

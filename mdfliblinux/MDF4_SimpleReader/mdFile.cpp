@@ -31,7 +31,6 @@
 #ifdef WIN32
 #include <io.h>
 #else
-#include <sys/io.h>
 #include <unistd.h>
 #endif
 #if !_MDF4_WIN

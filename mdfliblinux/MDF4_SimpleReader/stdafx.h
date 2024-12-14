@@ -19,6 +19,5 @@
 #include <io.h>
 #include <assert.h>
 #else
-#include <sys/io.h>
 #include <string.h>
 #endif
