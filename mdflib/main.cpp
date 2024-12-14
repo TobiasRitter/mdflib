@@ -22,8 +22,16 @@ int read(char* filename) {
 	return 0;
 }
 
+void* malloc(size_t size) {
+    return malloc(size);
+}
+
+void free(void* ptr) {
+    free(ptr);
+}
+
 int main()
 {
-	return read("./Test.mf4");
+	printf("Hello World\n");
 }
 
