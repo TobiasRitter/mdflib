@@ -13,5 +13,5 @@ em++ hello.cpp -o build/hello.html --use-port=zlib
 
 ```bash
 g++ MDF4_SimpleReader.cpp ImportMdf4.cpp mdf4.cpp mdFile.cpp md5.cpp -o build/reader
-em++ MDF4_SimpleReader.cpp ImportMdf4.cpp mdf4.cpp mdFile.cpp md5.cpp -o build/reader.html -s FORCE_FILESYSTEM=1
+em++ MDF4_SimpleReader.cpp ImportMdf4.cpp mdf4.cpp mdFile.cpp md5.cpp -o build/reader.wasm -s FORCE_FILESYSTEM=1
 ```
