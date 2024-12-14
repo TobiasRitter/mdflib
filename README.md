@@ -13,5 +13,5 @@ em++ hello.cpp -o build/hello.html --use-port=zlib
 
 ```bash
 g++ main.cpp ImportMdf4.cpp mdf4.cpp mdFile.cpp md5.cpp -o build/main
-em++ main.cpp ImportMdf4.cpp mdf4.cpp mdFile.cpp md5.cpp -o build/main.wasm -s FORCE_FILESYSTEM=1 -s EXPORTED_FUNCTIONS="['_read','_malloc','_free']"
+em++ main.cpp ImportMdf4.cpp mdf4.cpp mdFile.cpp md5.cpp -o build/main.html
 ```
