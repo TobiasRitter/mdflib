@@ -41,4 +41,6 @@ In VC a project for the Write example can be created as follows:
 
 In Netbeans it is basically the same. In Eclipse it should be possible, but I could not figure out how to do it (no C++?).
 
-
+```bash
+g++ MDF4_SimpleReader.cpp ImportMdf4.cpp mdf4.cpp mdFile.cpp md5.cpp -o reader
+```
