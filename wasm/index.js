@@ -1,7 +1,3 @@
-Module.onRuntimeInitialized = () => {
-    console.log(Module._add(3, 5));
-};
-
 let fileReader = new FileReader();
 
 function loadFile() {
@@ -13,6 +9,6 @@ function loadFile() {
 function postLoad() {
     let arrayBuffer = fileReader.result;
     let byteArray = new Uint8Array(arrayBuffer);
-    FS.writeFile('file.txt', byteArray);
-    console.log(Module._read());
+    FS.writeFile('Test.mf4', byteArray);
+    console.log(Module._mf4read());
 }
