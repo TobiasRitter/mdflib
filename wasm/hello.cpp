@@ -7,8 +7,3 @@ extern "C" {
         return a + b;
     }
 }
-
-int main() {
-    printf("Hello, World!\n");
-    return 0;
-}

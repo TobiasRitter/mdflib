@@ -12,13 +12,7 @@
   <script src="hello.js"></script>
   <script>
     Module.onRuntimeInitialized = () => {
-      console.log('WebAssembly module initialized.');
-
-      if (Module._add) {
-        console.log(Module._add(3, 5));
-      } else {
-        console.error('Function "_add" is not found in the module.');
-      }
+      console.log(Module._add(3, 5));
     };
   </script>
 </body>
