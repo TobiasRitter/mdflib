@@ -70,3 +70,6 @@ python/tests/__pycache__/
 *.mf4
 emsdk
 libexpat
+*.wasm
+*.html
+*.js
