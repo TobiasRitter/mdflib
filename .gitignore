@@ -53,6 +53,7 @@ vcpkg_installed/
 # Visual Studio code
 .vscode/
 build/
+!mdflib/build
 
 # User-specific files
 *.rsuser
